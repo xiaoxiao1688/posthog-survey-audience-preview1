@@ -55,7 +55,7 @@ jobs:
 
             - name: Post to Slack
               id: slack
-              uses: slackapi/slack-github-action@91efab103c0de0a537f72a35f6b8cda0ee76bf0a # v2.1.1
+              uses: slackapi/slack-github-action@dcb1066f776dd043e64d0e8ba94ca15cc7e1875d # v4.0.0
               with:
                   method: chat.postMessage
                   token: ${{ secrets.SLACK_BOT_TOKEN }}
@@ -131,7 +131,7 @@ jobs:
             - name: Update Slack message
               if: steps.slack_msg.outputs.found == 'true'
               continue-on-error: true
-              uses: slackapi/slack-github-action@91efab103c0de0a537f72a35f6b8cda0ee76bf0a # v2.1.1
+              uses: slackapi/slack-github-action@dcb1066f776dd043e64d0e8ba94ca15cc7e1875d # v4.0.0
               with:
                   method: chat.update
                   token: ${{ secrets.SLACK_BOT_TOKEN }}
@@ -199,7 +199,7 @@ jobs:
             - name: Add checkmark reaction
               if: steps.slack_msg.outputs.found == 'true'
               continue-on-error: true # already_reacted is expected on multi-approval PRs
-              uses: slackapi/slack-github-action@91efab103c0de0a537f72a35f6b8cda0ee76bf0a # v2.1.1
+              uses: slackapi/slack-github-action@dcb1066f776dd043e64d0e8ba94ca15cc7e1875d # v4.0.0
               with:
                   method: reactions.add
                   token: ${{ secrets.SLACK_BOT_TOKEN }}
@@ -212,7 +212,7 @@ jobs:
             - name: Update main message
               if: steps.slack_msg.outputs.found == 'true'
               continue-on-error: true
-              uses: slackapi/slack-github-action@91efab103c0de0a537f72a35f6b8cda0ee76bf0a # v2.1.1
+              uses: slackapi/slack-github-action@dcb1066f776dd043e64d0e8ba94ca15cc7e1875d # v4.0.0
               with:
                   method: chat.update
                   token: ${{ secrets.SLACK_BOT_TOKEN }}
